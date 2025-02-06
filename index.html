@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greh Pravesh Invitation</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f8e1c7, #f1b85b);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .card {
+            width: 80%;
+            max-width: 800px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1),
+                        0 5px 15px rgba(0, 0, 0, 0.07);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            animation: fadeIn 1s ease-out;
+        }
+
+        .card:before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            bottom: -10px;
+            left: -10px;
+            z-index: -1;
+            background: linear-gradient(135deg, #ffd700, #ffa500);
+            border-radius: 20px;
+            transform: rotate(1.5deg);
+            opacity: 0.7;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover:before {
+            transform: rotate(2deg) scale(1.02);
+        }
+
+        .card h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: #d88a15;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            animation: bounceIn 1s ease-out;
+        }
+
+        .card h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: #6c4b23;
+            margin-bottom: 25px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .card h2:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #6c4b23, transparent);
+        }
+
+        .card p {
+            font-size: 1.1rem;
+            color: #555;
+            margin: 15px 0;
+            line-height: 1.8;
+            letter-spacing: 0.3px;
+        }
+
+        .date-time {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #bf7115;
+            margin: 25px 0;
+            background: linear-gradient(145deg, #fff3d4, #fff9e6);
+            display: inline-block;
+            padding: 15px 25px;
+            border-radius: 12px;
+            border: 2px dashed #d88a15;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .date-time:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .venue {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: #444;
+            margin: 25px 0;
+            background: linear-gradient(145deg, #eef2ff, #f5f7ff);
+            padding: 15px 25px;
+            border-radius: 12px;
+            border: 2px solid #6c4b23;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .venue:hover {
+            transform: scale(1.02);
+        }
+
+        .schedule {
+            font-size: 1.2rem;
+            color: #555;
+            margin: 25px 0;
+            background: linear-gradient(145deg, #fff9e6, #fff5d6);
+            padding: 20px 30px;
+            border-radius: 12px;
+            border: 2px solid #d88a15;
+            display: inline-block;
+            text-align: left;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .schedule:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .schedule strong {
+            color: #d88a15;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 1.1rem;
+            color: #777;
+            font-style: italic;
+            line-height: 1.6;
+        }
+
+        .decoration {
+            width: 80%;
+            height: 3px;
+            background: linear-gradient(to right, transparent, #d9a436, #f0c97d, #d9a436, transparent);
+            margin: 30px auto;
+            border-radius: 3px;
+            position: relative;
+        }
+
+        .decoration::before, .decoration::after {
+            content: '❈';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #d88a15;
+            font-size: 24px;
+        }
+
+        .decoration::before {
+            left: 0;
+        }
+
+        .decoration::after {
+            right: 0;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes bounceIn {
+            0% { transform: scale(0.3); opacity: 0; }
+            50% { transform: scale(1.05); opacity: 0.8; }
+            70% { transform: scale(0.9); opacity: 0.9; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        @media (max-width: 850px) {
+            .card {
+                width: 95%;
+                padding: 20px;
+            }
+
+            .card h1 {
+                font-size: 2.8rem;
+            }
+
+            .card h2 {
+                font-size: 1.8rem;
+            }
+
+            .date-time, .venue, .schedule {
+                font-size: 1.1rem;
+                padding: 12px 20px;
+            }
+
+            .footer {
+                font-size: 1rem;
+            }
+
+            .decoration {
+                width: 70%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <pre><h1 class="animate_animated animate_fadeInDown">✨ You're Invited! ✨ With Family </h1></pre>
+        <h2>Greh Pravesh Ceremony</h2>
+        <div class="decoration"></div>
+        <p>We are excited to welcome you to our new home!</p>
+        <p class="date-time">📅 Date: 10th March 2025</p>
+        <p class="venue">📍 Venue: Near Transforma, Kharunia Bagicha, Agam Kuan</p>
+        <div class="schedule">
+            <strong>Schedule of Events:</strong><br>
+            🙏 Puja Timing: 9:26 AM - 1:46 PM<br>
+            🍽 Evening Bhojh: 7:00 PM
+        </div>
+        <p>Celebrate this auspicious occasion with us and make it memorable!</p>
+        <p class="footer">Warm regards, <br> 🌸 The Bhaskar family 🌸</p>
+        <div class="decoration"></div>
+    </div>
+</body>
+</html>
